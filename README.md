@@ -1,6 +1,6 @@
 # Void Hub - Games & Configurations
 
-![Void Hub Preview](https://i.imgur.com/placeholder.png) *Replace with actual preview image*
+![Void Hub Preview]([https://i.imgur.com/placeholder.png](https://imgur.com/a/3SmuY4D))
 
 ## 🌌 Overview
 
