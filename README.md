@@ -4,7 +4,7 @@
 
 ## 🌌 Overview
 
-Void Hub is a modern web portal that provides quick access to unblocked browser games and mobile device configurations. Designed with a sleek dark theme and futuristic aesthetics, the platform serves as a centralized hub for entertainment and utility resources.
+Pretty much a website for when your bored and on a mobile ios device mainly. if your at school this IS an option!
 
 ## ✨ Features
 
