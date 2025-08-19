@@ -101,13 +101,11 @@ To modify the site:
 3. **Update Configurations**:
    Modify the config cards in the Mobile Configs section.
 
-## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 📧 Contact
 
-For questions or suggestions, please open an issue on GitHub or contact the maintainer.
+For questions or suggestions, please open an issue on GitHub or contact me, springzman4@gmail.com 
 
 ---
 
