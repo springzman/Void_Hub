@@ -38,12 +38,18 @@
         
         /* Header & Navigation */
         header {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: fixed;
             width: 100%;
             z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
         
         .nav-container {
@@ -82,6 +88,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 0;
         }
         
         .nav-links a:hover {
@@ -91,7 +98,7 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
@@ -112,6 +119,7 @@
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
+            overflow: hidden;
         }
         
         .hero-content {
@@ -127,18 +135,21 @@
             background-clip: text;
             color: transparent;
             line-height: 1.2;
+            text-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
         }
         
         .hero p {
             font-size: 1.2rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
+            line-height: 1.8;
         }
         
         .hero-buttons {
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         .btn {
@@ -152,10 +163,13 @@
             border: none;
             cursor: pointer;
             font-family: 'Kanit', sans-serif;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn i {
             margin-right: 0.5rem;
+            transition: transform 0.3s ease;
         }
         
         .btn-primary {
@@ -169,6 +183,10 @@
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
         }
         
+        .btn-primary:hover i {
+            transform: translateX(3px);
+        }
+        
         .btn-secondary {
             background: rgba(255, 255, 255, 0.1);
             color: var(--text);
@@ -179,6 +197,7 @@
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-3px);
+            border-color: rgba(255, 255, 255, 0.2);
         }
         
         /* Content Sections */
@@ -200,12 +219,14 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            text-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
         }
         
         .section-subtitle {
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
+            font-size: 1.1rem;
         }
         
         /* Card Grid */
@@ -217,24 +238,42 @@
         }
         
         .card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
-            border-radius: 16px;
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.6));
+            border-radius: 20px;
             overflow: hidden;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .card:hover::before {
+            opacity: 1;
         }
         
         .card-header {
             padding: 1.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
         }
         
         .card-icon {
@@ -247,20 +286,41 @@
             margin-bottom: 1rem;
             font-size: 1.5rem;
             background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
         }
         
         .card-title {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
+            color: var(--text);
         }
         
         .card-desc {
             color: var(--text-muted);
             font-size: 0.9rem;
+            line-height: 1.6;
         }
         
         .card-body {
             padding: 1.5rem;
+        }
+        
+        .card-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-features li {
+            padding: 0.3rem 0;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-features li i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
         }
         
         .card-footer {
@@ -269,6 +329,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .tag {
@@ -277,6 +338,7 @@
             font-size: 0.8rem;
             background: rgba(99, 102, 241, 0.2);
             color: var(--primary);
+            font-weight: 500;
         }
         
         /* Animations */
@@ -289,6 +351,11 @@
             animation: float 5s ease-in-out infinite;
         }
         
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(99, 102, 241, 0.6); }
+        }
+        
         /* Background Elements */
         .bg-blob {
             position: absolute;
@@ -296,20 +363,63 @@
             height: 500px;
             border-radius: 50%;
             filter: blur(70px);
-            opacity: 0.2;
+            opacity: 0.15;
             z-index: 1;
+            animation: float 8s ease-in-out infinite;
         }
         
         .blob-1 {
             background: var(--primary);
             top: -100px;
             right: -100px;
+            animation-delay: 0s;
         }
         
         .blob-2 {
             background: var(--accent);
             bottom: -100px;
             left: -100px;
+            animation-delay: 2s;
+        }
+        
+        .blob-3 {
+            background: var(--secondary);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 4s;
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
         
         /* Responsive Design */
@@ -329,6 +439,26 @@
             .card-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -342,11 +472,14 @@
             </div>
             <nav class="nav-links">
                 <a href="#games">Games</a>
+                <a href="#fps">FPS Games</a>
                 <a href="#configs">Configs</a>
                 <a href="#resources">Resources</a>
                 <a href="#tools">Tools</a>
-                <a href="#support">Support</a>
             </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
@@ -354,17 +487,43 @@
     <section class="hero">
         <div class="bg-blob blob-1"></div>
         <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
         
         <div class="hero-content">
-            <h1>Premium Content <span class="orbitron">Unlocked</span></h1>
-            <p>Access the best browser games, mobile configurations, and utilities - all in one place. Regularly updated with new content.</p>
+            <h1>Ultimate Gaming <span class="orbitron">Experience</span></h1>
+            <p>Access the best browser games, premium FPS experiences, mobile configurations, and gaming utilities - all optimized for maximum performance and enjoyment.</p>
             <div class="hero-buttons">
                 <a href="#games" class="btn btn-primary">
-                    <i class="fas fa-gamepad"></i> Explore Games
+                    <i class="fas fa-gamepad"></i> Explore All Games
+                </a>
+                <a href="#fps" class="btn btn-primary">
+                    <i class="fas fa-crosshairs"></i> FPS Games
                 </a>
                 <a href="#configs" class="btn btn-secondary">
-                    <i class="fas fa-mobile-alt"></i> Get Configs
+                    <i class="fas fa-mobile-alt"></i> Mobile Configs
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section">
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Premium Games</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Updated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Working Links</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Ads & Trackers</div>
             </div>
         </div>
     </section>
@@ -386,7 +545,11 @@
                     <p class="card-desc">Hundreds of free browser games</p>
                 </div>
                 <div class="card-body">
-                    <p>Massive collection of high-quality browser games across all genres. Updated daily with new titles.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> 1000+ HTML5 games</li>
+                        <li><i class="fas fa-check"></i> No downloads required</li>
+                        <li><i class="fas fa-check"></i> Updated daily</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
                     <span class="tag">Browser</span>
@@ -403,7 +566,11 @@
                     <p class="card-desc">Fast-paced FPS browser game</p>
                 </div>
                 <div class="card-body">
-                    <p>Popular multiplayer shooter that runs smoothly in any browser. Customizable with mods and skins.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> 60+ FPS gameplay</li>
+                        <li><i class="fas fa-check"></i> Custom maps & mods</li>
+                        <li><i class="fas fa-check"></i> Esports ready</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
                     <span class="tag">FPS</span>
@@ -420,7 +587,11 @@
                     <p class="card-desc">Unblocked games collection</p>
                 </div>
                 <div class="card-body">
-                    <p>Curated selection of games that bypass network restrictions. Perfect for school or work environments.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Bypass restrictions</li>
+                        <li><i class="fas fa-check"></i> School/work friendly</li>
+                        <li><i class="fas fa-check"></i> Zero installation</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
                     <span class="tag">Unblocked</span>
@@ -437,7 +608,11 @@
                     <p class="card-desc">Educational games</p>
                 </div>
                 <div class="card-body">
-                    <p>Math and logic games that are actually fun. Great for learning while having a good time.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Math & logic games</li>
+                        <li><i class="fas fa-check"></i> Learning made fun</li>
+                        <li><i class="fas fa-check"></i> Teacher approved</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
                     <span class="tag">Educational</span>
@@ -454,7 +629,11 @@
                     <p class="card-desc">Classic unblocked games</p>
                 </div>
                 <div class="card-body">
-                    <p>The original unblocked games site with all the classics that started the browser gaming revolution.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Original classics</li>
+                        <li><i class="fas fa-check"></i> Timeless gameplay</li>
+                        <li><i class="fas fa-check"></i> Always accessible</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
                     <span class="tag">Classic</span>
@@ -471,7 +650,11 @@
                     <p class="card-desc">Multiplayer snake game</p>
                 </div>
                 <div class="card-body">
-                    <p>The classic snake game with a modern multiplayer twist. Grow the longest snake and dominate the leaderboard.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Mass multiplayer</li>
+                        <li><i class="fas fa-check"></i> Addictive gameplay</li>
+                        <li><i class="fas fa-check"></i> Global leaderboards</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
                     <span class="tag">Multiplayer</span>
@@ -481,8 +664,144 @@
         </div>
     </section>
 
+    <!-- FPS Games Section -->
+    <section id="fps" class="section" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);">
+        <div class="section-header">
+            <h2 class="section-title">Premium FPS Games</h2>
+            <p class="section-subtitle">The best first-person shooter experiences in your browser</p>
+        </div>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="card-title">Shell Shockers</h3>
+                    <p class="card-desc">Egg-based FPS combat</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Unique egg characters</li>
+                        <li><i class="fas fa-check"></i> Multiple game modes</li>
+                        <li><i class="fas fa-check"></i> Customizable weapons</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">FPS</span>
+                    <a href="https://shellshock.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-bomb"></i>
+                    </div>
+                    <h3 class="card-title">Bullet Force</h3>
+                    <p class="card-desc">Modern military FPS</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> 20+ weapons</li>
+                        <li><i class="fas fa-check"></i> Multiple game modes</li>
+                        <li><i class="fas fa-check"></i> Stunning graphics</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">FPS</span>
+                    <a href="https://bulletforce.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3 class="card-title">ZombsRoyale</h3>
+                    <p class="card-desc">Battle Royale FPS</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> 100-player battles</li>
+                        <li><i class="fas fa-check"></i> Building mechanics</li>
+                        <li><i class="fas fa-check"></i> Regular updates</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Battle Royale</span>
+                    <a href="https://zombsroyale.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <h3 class="card-title">Surviv.io</h3>
+                    <p class="card-desc">2D Battle Royale</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Fast-paced gameplay</li>
+                        <li><i class="fas fa-check"></i> Various weapons</li>
+                        <li><i class="fas fa-check"></i> Team modes available</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Battle Royale</span>
+                    <a href="https://surviv.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="card-title">Diep.io</h3>
+                    <p class="card-desc">Tank battle arena</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Upgradeable tanks</li>
+                        <li><i class="fas fa-check"></i> Multiple game modes</li>
+                        <li><i class="fas fa-check"></i> Strategic gameplay</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Arena</span>
+                    <a href="https://diep.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="card-title">1v1.LOL</h3>
+                    <p class="card-desc">Building & shooting</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Building mechanics</li>
+                        <li><i class="fas fa-check"></i> 1v1 battles</li>
+                        <li><i class="fas fa-check"></i> Practice modes</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Competitive</span>
+                    <a href="https://1v1.lol/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Configs Section -->
-    <section id="configs" class="section" style="background: rgba(0, 0, 0, 0.2);">
+    <section id="configs" class="section">
         <div class="section-header">
             <h2 class="section-title">Mobile Configurations</h2>
             <p class="section-subtitle">Optimize your mobile experience with these premium configurations</p>
@@ -498,10 +817,14 @@
                     <p class="card-desc">Mobile configurations</p>
                 </div>
                 <div class="card-body">
-                    <p>Comprehensive collection of mobile configurations for various apps and services. Regularly updated.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> iOS & Android support</li>
+                        <li><i class="fas fa-check"></i> Regular updates</li>
+                        <li><i class="fas fa-check"></i> Easy installation</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
-                    <span class="tag">iOS/Android</span>
+                    <span class="tag">Mobile</span>
                     <a href="https://jorkthepork.github.io/JorkHubV1/" target="_blank" class="btn btn-primary">Get Configs</a>
                 </div>
             </div>
@@ -515,7 +838,11 @@
                     <p class="card-desc">HTTPS to DNS</p>
                 </div>
                 <div class="card-body">
-                    <p>Secure DNS configuration for enhanced privacy and faster browsing on mobile devices.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Enhanced privacy</li>
+                        <li><i class="fas fa-check"></i> Faster browsing</li>
+                        <li><i class="fas fa-check"></i> Ad blocking</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
                     <span class="tag">DNS</span>
@@ -532,96 +859,137 @@
                     <p class="card-desc">Performance enhancement</p>
                 </div>
                 <div class="card-body">
-                    <p>Optimize your mobile gaming experience with these performance-enhancing configurations.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Reduced lag</li>
+                        <li><i class="fas fa-check"></i> Higher FPS</li>
+                        <li><i class="fas fa-check"></i> Better battery life</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
                     <span class="tag">Performance</span>
-                    <a href="#" class="btn btn-primary">Coming Soon</a>
+                    <a href="https://github.com/topics/game-booster" target="_blank" class="btn btn-primary">Download</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Additional Resources Section -->
-    <section id="resources" class="section">
+    <!-- Tools Section -->
+    <section id="tools" class="section" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);">
         <div class="section-header">
-            <h2 class="section-title">Additional Resources</h2>
-            <p class="section-subtitle">More tools and websites to enhance your experience</p>
+            <h2 class="section-title">Gaming Tools & Utilities</h2>
+            <p class="section-subtitle">Essential tools for every gamer</p>
         </div>
         
         <div class="card-grid">
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-tools"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <h3 class="card-title">Online Utilities</h3>
-                    <p class="card-desc">Useful web tools</p>
+                    <h3 class="card-title">FPS Monitor</h3>
+                    <p class="card-desc">Performance tracking</p>
                 </div>
                 <div class="card-body">
-                    <p>Collection of handy online utilities for various tasks - from file conversion to code formatting.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Real-time monitoring</li>
+                        <li><i class="fas fa-check"></i> Hardware statistics</li>
+                        <li><i class="fas fa-check"></i> Custom overlays</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
-                    <span class="tag">Tools</span>
-                    <a href="#" class="btn btn-primary">Explore</a>
+                    <span class="tag">Windows</span>
+                    <a href="https://www.fpsmonitor.com/" target="_blank" class="btn btn-primary">Download</a>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-palette"></i>
+                        <i class="fas fa-keyboard"></i>
                     </div>
-                    <h3 class="card-title">Theme Library</h3>
-                    <p class="card-desc">Customization packs</p>
+                    <h3 class="card-title">AutoHotkey</h3>
+                    <p class="card-desc">Automation scripts</p>
                 </div>
                 <div class="card-body">
-                    <p>Custom themes and visual modifications for various apps and platforms to personalize your experience.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Macro creation</li>
+                        <li><i class="fas fa-check"></i> Key remapping</li>
+                        <li><i class="fas fa-check"></i> Game automation</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
-                    <span class="tag">Themes</span>
-                    <a href="#" class="btn btn-primary">Browse</a>
+                    <span class="tag">Windows</span>
+                    <a href="https://www.autohotkey.com/" target="_blank" class="btn btn-primary">Download</a>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-book"></i>
+                        <i class="fas fa-desktop"></i>
                     </div>
-                    <h3 class="card-title">Tutorials</h3>
-                    <p class="card-desc">Step-by-step guides</p>
+                    <h3 class="card-title">OBS Studio</h3>
+                    <p class="card-desc">Game recording</p>
                 </div>
                 <div class="card-body">
-                    <p>Detailed guides and tutorials to help you make the most of your software and configurations.</p>
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> High-quality recording</li>
+                        <li><i class="fas fa-check"></i> Live streaming</li>
+                        <li><i class="fas fa-check"></i> Custom overlays</li>
+                    </ul>
                 </div>
                 <div class="card-footer">
-                    <span class="tag">Learning</span>
-                    <a href="#" class="btn btn-primary">Learn</a>
+                    <span class="tag">Multiplatform</span>
+                    <a href="https://obsproject.com/" target="_blank" class="btn btn-primary">Download</a>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Simple animation on scroll
+        // Enhanced animations and interactions
         document.addEventListener('DOMContentLoaded', function() {
             const cards = document.querySelectorAll('.card');
+            const header = document.querySelector('header');
             
+            // Scroll animation for cards
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
                     }
                 });
             }, { threshold: 0.1 });
             
             cards.forEach(card => {
                 card.style.opacity = 0;
-                card.style.transform = 'translateY(50px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.transform = 'translateY(50px) scale(0.95)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
+            });
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
         });
     </script>
