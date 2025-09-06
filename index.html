@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Void Hub - Premium Games & Configurations</title>
+    <title>Void Hub - Ultimate Mobile Gaming</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
@@ -293,6 +293,18 @@
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
             color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .mobile-badge {
+            background: rgba(72, 187, 120, 0.2);
+            color: #48bb78;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
         }
         
         .card-desc {
@@ -471,11 +483,10 @@
                 VOID HUB
             </div>
             <nav class="nav-links">
-                <a href="#games">Games</a>
+                <a href="#games">All Games</a>
                 <a href="#fps">FPS Games</a>
+                <a href="#cloud">Cloud Gaming</a>
                 <a href="#configs">Configs</a>
-                <a href="#resources">Resources</a>
-                <a href="#tools">Tools</a>
             </nav>
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
@@ -490,17 +501,17 @@
         <div class="bg-blob blob-3"></div>
         
         <div class="hero-content">
-            <h1>Ultimate Gaming <span class="orbitron">Experience</span></h1>
-            <p>Access the best browser games, premium FPS experiences, mobile configurations, and gaming utilities - all optimized for maximum performance and enjoyment.</p>
+            <h1>Ultimate Mobile <span class="orbitron">Gaming</span></h1>
+            <p>Access the best mobile-optimized games, cloud gaming services, and FPS experiences that work flawlessly on any device. Pure fun, no educational stuff!</p>
             <div class="hero-buttons">
-                <a href="#games" class="btn btn-primary">
-                    <i class="fas fa-gamepad"></i> Explore All Games
+                <a href="#cloud" class="btn btn-primary">
+                    <i class="fas fa-cloud"></i> Cloud Gaming
                 </a>
                 <a href="#fps" class="btn btn-primary">
                     <i class="fas fa-crosshairs"></i> FPS Games
                 </a>
-                <a href="#configs" class="btn btn-secondary">
-                    <i class="fas fa-mobile-alt"></i> Mobile Configs
+                <a href="#games" class="btn btn-secondary">
+                    <i class="fas fa-gamepad"></i> All Games
                 </a>
             </div>
         </div>
@@ -510,29 +521,217 @@
     <section class="section">
         <div class="stats">
             <div class="stat-item">
-                <div class="stat-number">150+</div>
-                <div class="stat-label">Premium Games</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">Updated</div>
-            </div>
-            <div class="stat-item">
                 <div class="stat-number">100%</div>
-                <div class="stat-label">Working Links</div>
+                <div class="stat-label">Mobile Compatible</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">0</div>
-                <div class="stat-label">Ads & Trackers</div>
+                <div class="stat-label">Educational Games</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Pure Fun Games</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Available</div>
             </div>
         </div>
     </section>
 
-    <!-- Games Section -->
+    <!-- Cloud Gaming Section -->
+    <section id="cloud" class="section">
+        <div class="section-header">
+            <h2 class="section-title">Cloud Gaming Services</h2>
+            <p class="section-subtitle">Play high-end games on mobile with these cloud services</p>
+        </div>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="card-title">Now.gg <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Cloud gaming platform</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Play Android games on any device</li>
+                        <li><i class="fas fa-check"></i> No downloads required</li>
+                        <li><i class="fas fa-check"></i> Free tier available</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Cloud</span>
+                    <a href="https://now.gg/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="card-title">Xbox Cloud Gaming <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Microsoft cloud service</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Xbox Game Pass games</li>
+                        <li><i class="fas fa-check"></i> Mobile optimized</li>
+                        <li><i class="fas fa-check"></i> Free trial available</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Cloud</span>
+                    <a href="https://www.xbox.com/en-US/cloud-gaming" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FPS Games Section -->
+    <section id="fps" class="section" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);">
+        <div class="section-header">
+            <h2 class="section-title">Mobile FPS Games</h2>
+            <p class="section-subtitle">First-person shooter games that work perfectly on mobile devices</p>
+        </div>
+        
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="card-title">Shell Shockers <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Egg-based FPS combat</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Touch controls</li>
+                        <li><i class="fas fa-check"></i> Mobile optimized</li>
+                        <li><i class="fas fa-check"></i> Multiplayer</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">FPS</span>
+                    <a href="https://shellshock.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-crosshairs"></i>
+                    </div>
+                    <h3 class="card-title">Bullet Force <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Modern military FPS</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Mobile controls</li>
+                        <li><i class="fas fa-check"></i> 20+ weapons</li>
+                        <li><i class="fas fa-check"></i> Multiplayer</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">FPS</span>
+                    <a href="https://bulletforce.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3 class="card-title">ZombsRoyale <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Battle Royale FPS</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Touch controls</li>
+                        <li><i class="fas fa-check"></i> 100-player battles</li>
+                        <li><i class="fas fa-check"></i> Building mechanics</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Battle Royale</span>
+                    <a href="https://zombsroyale.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <h3 class="card-title">Surviv.io <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">2D Battle Royale</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Touch optimized</li>
+                        <li><i class="fas fa-check"></i> Fast-paced gameplay</li>
+                        <li><i class="fas fa-check"></i> Team modes</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Battle Royale</span>
+                    <a href="https://surviv.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="card-title">Diep.io <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Tank battle arena</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Touch controls</li>
+                        <li><i class="fas fa-check"></i> Upgradeable tanks</li>
+                        <li><i class="fas fa-check"></i> Multiplayer</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">Arena</span>
+                    <a href="https://diep.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="card-title">Combat Reloaded <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Tactical FPS</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Mobile optimized</li>
+                        <li><i class="fas fa-check"></i> Multiple weapons</li>
+                        <li><i class="fas fa-check"></i> Team deathmatch</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">FPS</span>
+                    <a href="https://www.crazygames.com/game/combat-reloaded" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Games Section -->
     <section id="games" class="section">
         <div class="section-header">
-            <h2 class="section-title">Premium Online Games</h2>
-            <p class="section-subtitle">The best browser-based games that work on any device</p>
+            <h2 class="section-title">All Mobile Games</h2>
+            <p class="section-subtitle">Complete collection of mobile-optimized fun games - no educational stuff!</p>
         </div>
         
         <div class="card-grid">
@@ -541,54 +740,75 @@
                     <div class="card-icon">
                         <i class="fas fa-dice"></i>
                     </div>
-                    <h3 class="card-title">CrazyGames</h3>
-                    <p class="card-desc">Hundreds of free browser games</p>
+                    <h3 class="card-title">Poki.com <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Thousands of fun games</p>
                 </div>
                 <div class="card-body">
                     <ul class="card-features">
-                        <li><i class="fas fa-check"></i> 1000+ HTML5 games</li>
-                        <li><i class="fas fa-check"></i> No downloads required</li>
-                        <li><i class="fas fa-check"></i> Updated daily</li>
+                        <li><i class="fas fa-check"></i> 1000+ mobile games</li>
+                        <li><i class="fas fa-check"></i> Touch controls</li>
+                        <li><i class="fas fa-check"></i> All fun genres</li>
                     </ul>
                 </div>
                 <div class="card-footer">
-                    <span class="tag">Browser</span>
-                    <a href="https://www.crazygames.com/" target="_blank" class="btn btn-primary">Play Now</a>
+                    <span class="tag">Fun Games</span>
+                    <a href="https://poki.com/" target="_blank" class="btn btn-primary">Play Now</a>
                 </div>
             </div>
-            
+
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
-                        <i class="fas fa-crosshairs"></i>
+                        <i class="fas fa-play-circle"></i>
                     </div>
-                    <h3 class="card-title">Krunker.io</h3>
-                    <p class="card-desc">Fast-paced FPS browser game</p>
+                    <h3 class="card-title">MSN Games <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Premium mobile gaming</p>
                 </div>
                 <div class="card-body">
                     <ul class="card-features">
-                        <li><i class="fas fa-check"></i> 60+ FPS gameplay</li>
-                        <li><i class="fas fa-check"></i> Custom maps & mods</li>
-                        <li><i class="fas fa-check"></i> Esports ready</li>
+                        <li><i class="fas fa-check"></i> High-quality games</li>
+                        <li><i class="fas fa-check"></i> Touch controls</li>
+                        <li><i class="fas fa-check"></i> Pure entertainment</li>
                     </ul>
                 </div>
                 <div class="card-footer">
-                    <span class="tag">FPS</span>
-                    <a href="https://krunker.io/" target="_blank" class="btn btn-primary">Play Now</a>
+                    <span class="tag">Premium</span>
+                    <a href="https://www.msn.com/en-us/play" target="_blank" class="btn btn-primary">Play Now</a>
                 </div>
             </div>
-            
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h3 class="card-title">CrazyGames <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Thousands of HTML5 games</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-features">
+                        <li><i class="fas fa-check"></i> 1000+ mobile games</li>
+                        <li><i class="fas fa-check"></i> Touch controls</li>
+                        <li><i class="fas fa-check"></i> All fun genres</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <span class="tag">All Games</span>
+                    <a href="https://www.crazygames.com/" target="_blank" class="btn btn-primary">Play Now</a>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="card-title">Yandex Games</h3>
+                    <h3 class="card-title">Yandex Games <span class="mobile-badge">Mobile</span></h3>
                     <p class="card-desc">Unblocked games collection</p>
                 </div>
                 <div class="card-body">
                     <ul class="card-features">
-                        <li><i class="fas fa-check"></i> Bypass restrictions</li>
+                        <li><i class="fas fa-check"></i> Mobile optimized</li>
                         <li><i class="fas fa-check"></i> School/work friendly</li>
                         <li><i class="fas fa-check"></i> Zero installation</li>
                     </ul>
@@ -598,41 +818,20 @@
                     <a href="https://yandex.com/games/" target="_blank" class="btn btn-primary">Play Now</a>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-chess"></i>
-                    </div>
-                    <h3 class="card-title">HoodaMath</h3>
-                    <p class="card-desc">Educational games</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> Math & logic games</li>
-                        <li><i class="fas fa-check"></i> Learning made fun</li>
-                        <li><i class="fas fa-check"></i> Teacher approved</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">Educational</span>
-                    <a href="https://www.hoodamath.com/" target="_blank" class="btn btn-primary">Play Now</a>
-                </div>
-            </div>
-            
+
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
                         <i class="fas fa-puzzle-piece"></i>
                     </div>
-                    <h3 class="card-title">CoolMath Games</h3>
-                    <p class="card-desc">Classic unblocked games</p>
+                    <h3 class="card-title">CoolMath Games <span class="mobile-badge">Mobile</span></h3>
+                    <p class="card-desc">Classic fun games</p>
                 </div>
                 <div class="card-body">
                     <ul class="card-features">
                         <li><i class="fas fa-check"></i> Original classics</li>
-                        <li><i class="fas fa-check"></i> Timeless gameplay</li>
-                        <li><i class="fas fa-check"></i> Always accessible</li>
+                        <li><i class="fas fa-check"></i> Mobile optimized</li>
+                        <li><i class="fas fa-check"></i> Pure entertainment</li>
                     </ul>
                 </div>
                 <div class="card-footer">
@@ -640,20 +839,20 @@
                     <a href="https://www.coolmathgames.com/" target="_blank" class="btn btn-primary">Play Now</a>
                 </div>
             </div>
-            
+
             <div class="card">
                 <div class="card-header">
                     <div class="card-icon">
                         <i class="fas fa-snake"></i>
                     </div>
-                    <h3 class="card-title">Slither.io</h3>
+                    <h3 class="card-title">Slither.io <span class="mobile-badge">Mobile</span></h3>
                     <p class="card-desc">Multiplayer snake game</p>
                 </div>
                 <div class="card-body">
                     <ul class="card-features">
+                        <li><i class="fas fa-check"></i> Touch controls</li>
                         <li><i class="fas fa-check"></i> Mass multiplayer</li>
                         <li><i class="fas fa-check"></i> Addictive gameplay</li>
-                        <li><i class="fas fa-check"></i> Global leaderboards</li>
                     </ul>
                 </div>
                 <div class="card-footer">
@@ -664,147 +863,11 @@
         </div>
     </section>
 
-    <!-- FPS Games Section -->
-    <section id="fps" class="section" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);">
-        <div class="section-header">
-            <h2 class="section-title">Premium FPS Games</h2>
-            <p class="section-subtitle">The best first-person shooter experiences in your browser</p>
-        </div>
-        
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3 class="card-title">Shell Shockers</h3>
-                    <p class="card-desc">Egg-based FPS combat</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> Unique egg characters</li>
-                        <li><i class="fas fa-check"></i> Multiple game modes</li>
-                        <li><i class="fas fa-check"></i> Customizable weapons</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">FPS</span>
-                    <a href="https://shellshock.io/" target="_blank" class="btn btn-primary">Play Now</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-bomb"></i>
-                    </div>
-                    <h3 class="card-title">Bullet Force</h3>
-                    <p class="card-desc">Modern military FPS</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> 20+ weapons</li>
-                        <li><i class="fas fa-check"></i> Multiple game modes</li>
-                        <li><i class="fas fa-check"></i> Stunning graphics</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">FPS</span>
-                    <a href="https://bulletforce.io/" target="_blank" class="btn btn-primary">Play Now</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-running"></i>
-                    </div>
-                    <h3 class="card-title">ZombsRoyale</h3>
-                    <p class="card-desc">Battle Royale FPS</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> 100-player battles</li>
-                        <li><i class="fas fa-check"></i> Building mechanics</li>
-                        <li><i class="fas fa-check"></i> Regular updates</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">Battle Royale</span>
-                    <a href="https://zombsroyale.io/" target="_blank" class="btn btn-primary">Play Now</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-skull"></i>
-                    </div>
-                    <h3 class="card-title">Surviv.io</h3>
-                    <p class="card-desc">2D Battle Royale</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> Fast-paced gameplay</li>
-                        <li><i class="fas fa-check"></i> Various weapons</li>
-                        <li><i class="fas fa-check"></i> Team modes available</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">Battle Royale</span>
-                    <a href="https://surviv.io/" target="_blank" class="btn btn-primary">Play Now</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="card-title">Diep.io</h3>
-                    <p class="card-desc">Tank battle arena</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> Upgradeable tanks</li>
-                        <li><i class="fas fa-check"></i> Multiple game modes</li>
-                        <li><i class="fas fa-check"></i> Strategic gameplay</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">Arena</span>
-                    <a href="https://diep.io/" target="_blank" class="btn btn-primary">Play Now</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3 class="card-title">1v1.LOL</h3>
-                    <p class="card-desc">Building & shooting</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> Building mechanics</li>
-                        <li><i class="fas fa-check"></i> 1v1 battles</li>
-                        <li><i class="fas fa-check"></i> Practice modes</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">Competitive</span>
-                    <a href="https://1v1.lol/" target="_blank" class="btn btn-primary">Play Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Configs Section -->
-    <section id="configs" class="section">
+    <section id="configs" class="section" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);">
         <div class="section-header">
             <h2 class="section-title">Mobile Configurations</h2>
-            <p class="section-subtitle">Optimize your mobile experience with these premium configurations</p>
+            <p class="section-subtitle">Optimize your mobile gaming experience</p>
         </div>
         
         <div class="card-grid">
@@ -813,7 +876,7 @@
                     <div class="card-icon">
                         <i class="fas fa-server"></i>
                     </div>
-                    <h3 class="card-title">JorkHub</h3>
+                    <h3 class="card-title">JorkHub <span class="mobile-badge">Mobile</span></h3>
                     <p class="card-desc">Mobile configurations</p>
                 </div>
                 <div class="card-body">
@@ -834,7 +897,7 @@
                     <div class="card-icon">
                         <i class="fas fa-shield-virus"></i>
                     </div>
-                    <h3 class="card-title">DNS Config</h3>
+                    <h3 class="card-title">DNS Config <span class="mobile-badge">Mobile</span></h3>
                     <p class="card-desc">HTTPS to DNS</p>
                 </div>
                 <div class="card-body">
@@ -855,7 +918,7 @@
                     <div class="card-icon">
                         <i class="fas fa-bolt"></i>
                     </div>
-                    <h3 class="card-title">Game Booster</h3>
+                    <h3 class="card-title">Game Booster <span class="mobile-badge">Mobile</span></h3>
                     <p class="card-desc">Performance enhancement</p>
                 </div>
                 <div class="card-body">
@@ -868,79 +931,6 @@
                 <div class="card-footer">
                     <span class="tag">Performance</span>
                     <a href="https://github.com/topics/game-booster" target="_blank" class="btn btn-primary">Download</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools Section -->
-    <section id="tools" class="section" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);">
-        <div class="section-header">
-            <h2 class="section-title">Gaming Tools & Utilities</h2>
-            <p class="section-subtitle">Essential tools for every gamer</p>
-        </div>
-        
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <h3 class="card-title">FPS Monitor</h3>
-                    <p class="card-desc">Performance tracking</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> Real-time monitoring</li>
-                        <li><i class="fas fa-check"></i> Hardware statistics</li>
-                        <li><i class="fas fa-check"></i> Custom overlays</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">Windows</span>
-                    <a href="https://www.fpsmonitor.com/" target="_blank" class="btn btn-primary">Download</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-keyboard"></i>
-                    </div>
-                    <h3 class="card-title">AutoHotkey</h3>
-                    <p class="card-desc">Automation scripts</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> Macro creation</li>
-                        <li><i class="fas fa-check"></i> Key remapping</li>
-                        <li><i class="fas fa-check"></i> Game automation</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">Windows</span>
-                    <a href="https://www.autohotkey.com/" target="_blank" class="btn btn-primary">Download</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3 class="card-title">OBS Studio</h3>
-                    <p class="card-desc">Game recording</p>
-                </div>
-                <div class="card-body">
-                    <ul class="card-features">
-                        <li><i class="fas fa-check"></i> High-quality recording</li>
-                        <li><i class="fas fa-check"></i> Live streaming</li>
-                        <li><i class="fas fa-check"></i> Custom overlays</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <span class="tag">Multiplatform</span>
-                    <a href="https://obsproject.com/" target="_blank" class="btn btn-primary">Download</a>
                 </div>
             </div>
         </div>
